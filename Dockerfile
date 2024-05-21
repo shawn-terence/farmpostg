@@ -21,7 +21,7 @@ COPY . /app/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Collect static files (assuming you have a collectstatic command in Django)
+# Collect static files
 RUN python manage.py collectstatic --noinput
 
 # Expose the port your app runs on
