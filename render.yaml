@@ -1,9 +1,8 @@
 databases:
-  - name: farmat
+  - name: farmat-db
     plan: free
     databaseName: farmdb
-    user: postgres
-
+    user: farmat_user
 services:
   - type: web
     plan: free
