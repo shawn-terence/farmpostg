@@ -6,15 +6,10 @@ databases:
 
 services:
   - type: web
-    plan: free
     name: farmat
-    runtime: python
-    pythonVersion: "3.8"
-    buildCommand: |
-      sudo apt-get update
-      sudo apt-get install -y libc6-dev
-      ./build.sh
-    startCommand: "python -m gunicorn backend.asgi:application -k uvicorn.workers.UvicornWorker"
+    plan: free
+    env: docker
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: DATABASE_URL
         fromDatabase:
